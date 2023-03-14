@@ -54,7 +54,7 @@ fn bogosort(mut arr:Vec<isize>) -> Vec<isize> {
 }
 
 /// fn to check if an array is sorted
-fn issorted(arr: &Vec<isize>) -> bool{
+fn issorted(arr: &Vec<impl Ord>) -> bool{
     for i in 1..arr.len(){
         if arr[i] < arr[i-1]{
             return false;
