@@ -6,8 +6,8 @@ use std::thread;
 
 fn main(){
     let arr: Vec<isize> = std::env::args().skip(1).map(|x| isize::from_str(&x).expect("Input must be integers!")).collect();
-    println!("{:?}", arr);
-    println!("{}", issorted(&arr));
+    //println!("{:?}", arr);
+    //println!("{}", issorted(&arr));
 
     let (send, recv) = channel();
     let mut t_killers = Vec::new();
