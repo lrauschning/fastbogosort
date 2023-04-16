@@ -8,6 +8,4 @@ edition = "2021"
 [dependencies]
 rand = "0.8.4"
 rip_shuffle= "0.1"
-
-[toolchain]
-channel = "nightly"
+libc = "0.2.141"
