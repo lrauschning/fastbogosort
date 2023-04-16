@@ -42,8 +42,9 @@ fn par_bogosort(arr:&Vec<isize>, no_threads:usize) -> Vec<isize>{
 }
 
 fn bogosort<T: Ord>(mut arr:Vec<T>) -> Vec<T> {
+    let rng = &mut rand::thread_rng();
     while !issorted(&arr){
-        arr.seq_shuffle(&mut rand::thread_rng());
+        arr.seq_shuffle(rng);
     }
     arr
 }
