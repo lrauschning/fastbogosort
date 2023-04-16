@@ -21,8 +21,8 @@ fn par_bogosort(arr:&Vec<isize>, no_threads:usize) -> Vec<isize>{
         let t_send = send.clone();
         let t_arr = arr.clone();
         threads.push(thread::spawn(move || {
-            if let Err(_) = t_send.send(bogosort(t_arr)) {
-                panic!("Error in sending result!");
+            if let Err(x) = t_send.send(bogosort(t_arr)) {
+                println!("Error in sending result: {:?}!", x);
             }
         }));
     }
